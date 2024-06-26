@@ -1,4 +1,6 @@
-import 'package:custom_painter/line_painter.dart';
+import 'package:custom_painter/my_circle_art.dart';
+import 'package:custom_painter/my_painter.dart';
+import 'package:custom_painter/my_rect_painter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,18 +26,62 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Custom Painters")),
-      body: Center(
-        child: ColoredBox(
-          color: Colors.grey.shade300,
-          child: SizedBox(
-            width: 300,
-            height: 50,
-            child: CustomPaint(
-              painter: MyLinePainter(),
-              size: const Size(300, 50),
+      body: ListView(
+        children: [
+          const SizedBox(height: 30),
+          Center(
+            child: ColoredBox(
+              color: Colors.grey.shade300,
+              child: SizedBox(
+                width: 300,
+                height: 150,
+                child: CustomPaint(
+                  painter: MyPainter(),
+                  size: const Size(300, 150),
+                ),
+              ),
             ),
           ),
-        ),
+          Center(
+            child: ColoredBox(
+              color: Colors.grey.shade300,
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: CustomPaint(
+                  painter: MyCircleArtPainter(),
+                  size: const Size(300, 300),
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: ColoredBox(
+              color: Colors.blueGrey,
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: CustomPaint(
+                  painter: MyRectPainter(),
+                  size: const Size(300, 300),
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: ColoredBox(
+              color: Colors.blueGrey,
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: CustomPaint(
+                  painter: MyRectPainter(),
+                  size: const Size(300, 300),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
