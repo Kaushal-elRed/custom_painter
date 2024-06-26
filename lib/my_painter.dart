@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 class MyPainter extends CustomPainter {
@@ -21,24 +22,24 @@ class MyPainter extends CustomPainter {
           Offset(size.width, i.toDouble()), Offset(size.width / 2, 50), paint);
     }
 
-    //! Drawing Circle
+    //! Drawing Circle sun
     Paint circlePaint = Paint()..color = Colors.red;
     canvas.drawCircle(Offset(size.width / 2, 35), 15, circlePaint);
 
-    //! Drawing Rectangle
+    //! Drawing Rectangle water
     Paint rectPaint = Paint()
       ..color = Colors.blue
-      ..strokeWidth = 1;
+      ..strokeWidth = 1
+      ..shader = ui.Gradient.radial(
+          Offset(size.width / 2, 5), 100, [Colors.red, Colors.blue]);
     canvas.drawRect(Rect.fromLTWH(0, 50, size.width, 40), rectPaint);
-    //! Drawing Rectangle
+
+    //! Drawing Rectangle ground
     Paint rectGroundPaint = Paint()
       ..color = Colors.brown
       ..strokeWidth = 1;
     canvas.drawRect(Rect.fromLTWH(0, 90, size.width, 40), rectGroundPaint);
     drawFlag(canvas, size);
-
-    //! Drawing Oval
-    
   }
 
   @override

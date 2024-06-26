@@ -1,4 +1,5 @@
 import 'package:custom_painter/my_circle_art.dart';
+import 'package:custom_painter/my_color_painter.dart';
 import 'package:custom_painter/my_painter.dart';
 import 'package:custom_painter/my_rect_painter.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class HomePage extends StatelessWidget {
                 width: 300,
                 height: 300,
                 child: CustomPaint(
-                  painter: MyRectPainter(),
+                  painter: MyColorPainter(),
                   size: const Size(300, 300),
                 ),
               ),
