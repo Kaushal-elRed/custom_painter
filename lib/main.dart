@@ -1,3 +1,4 @@
+import 'package:custom_painter/custom_cliper/custom_cliper.dart';
 import 'package:custom_painter/my_circle_art.dart';
 import 'package:custom_painter/my_color_painter.dart';
 import 'package:custom_painter/my_painter.dart';
@@ -30,6 +31,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(height: 30),
+          const Clipper(),
           Center(
             child: ColoredBox(
               color: Colors.grey.shade300,
